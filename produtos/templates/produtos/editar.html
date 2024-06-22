@@ -1,0 +1,16 @@
+{% extends 'produtos/base.html' %}  
+{% load static %}
+
+{% block title %}Editar Produto{% endblock %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'produtos/style.css' %}">
+</head>
+
+{% block content %}
+    <h2>Editar Produto</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+{% endblock %}

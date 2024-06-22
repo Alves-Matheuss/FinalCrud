@@ -1,0 +1,16 @@
+{% extends 'produtos/base.html' %}  
+{% load static %}
+
+{% block title %}Deletar Produto{% endblock %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'produtos/style.css' %}">
+</head>
+{% block content %}
+    <h2>Deletar Produto</h2>
+    <p>Tem certeza que deseja deletar o produto "{{ produto.nome }}?"</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sim, deletar</button>
+        <a href="{% url 'listar_produtos' %}">Cancelar</a>
+    </form>
+{% endblock %}
